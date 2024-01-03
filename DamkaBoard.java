@@ -4,17 +4,17 @@
 public class DamkaBoard {
 	public static void main(String[] args) {
 		int n = Integer.parseInt(args[0]);
-		for(int i = 0; i < n ; i++) //שורה
-		{
-			if ( i % 2 != 0) // if the row is even you should print 1 space inside
-			{
-				System.out.print(" ");
-			}
-			for(int j=0 ; j < n ; j++) // עמודות
-			{
-				System.out.print(" * ");
-			}
-			System.out.println();
-		}
+		for (int i = 0; i < n; i++) // שורה
+	        {
+	            for (int j = 0; j < n; j++) // עמודות
+	            {
+	                if ((i + j) % 2 == 0) {
+	                    System.out.print("* ");
+	                } else {
+	                    System.out.print(" ");
+	                }
+	            }
+	            System.out.println();
+	        }
 	}
 }
