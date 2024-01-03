@@ -24,6 +24,8 @@ public class OneOfEachStats {
 		//// just like you had in the previous version, except that the 
 		//// randomization will be based on the given seed.
 		//// This is the only change that you have to do in the program.
+		
+		//*
 		boolean girl, boy;
 	int T = Integer.parseInt(args[0]);
 	int seed = Integer.parseInt(args[1]);
@@ -78,6 +80,60 @@ public class OneOfEachStats {
 		System.out.println("The most common number of children is 2.");
 	} else {
 		System.out.println("The most common number of children is 3.");
-	}    
+	} 
+		*//
+		        boolean girl, boy;
+        int T = Integer.parseInt(args[0]);
+        int seed = Integer.parseInt(args[1]);
+        Random generator = new Random(seed);
+        int count2C = 0;
+        int count3C = 0;
+        int count4C = 0;
+        int sum = 0;
+        int max;
+        double average;
+
+        for (int i = 0; i < T; i++) {
+            girl = false;
+            boy = false;
+            int count = 0;
+
+            while ((!girl) || (!boy)) {
+                double random = generator.nextDouble();
+                if (random >= 0.5) {
+                    girl = true;
+                } else {
+                    boy = true;
+                }
+                count++;
+            }
+
+            sum += count;
+
+            if (count >= 4) {
+                count4C++;
+            } else if (count == 3) {
+                count3C++;
+            } else if (count == 2) {
+                count2C++;
+            }
+        }
+
+        int tempmax = Math.max(count2C, count3C);
+        max = Math.max(tempmax, count4C);
+        average = (double) sum / T;
+
+        System.out.println("Average: " + average + " children to get at least one of each gender.");
+        System.out.println("Number of families with 2 children: " + count2C);
+        System.out.println("Number of families with 3 children: " + count3C);
+        System.out.println("Number of families with 4 or more children: " + count4C);
+
+        if (max == count4C) {
+            System.out.println("The most common number of children is 4 or more.");
+        } else if (max == count2C) {
+            System.out.println("The most common number of children is 2.");
+        } else {
+            System.out.println("The most common number of children is 3.");
+        }
 	}
 }
