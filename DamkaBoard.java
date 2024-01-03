@@ -10,12 +10,11 @@ public class DamkaBoard {
                 System.out.print(" ");
             }
 
-            for (int j = 0; j < n - 1; j++) { 
+            for (int j = 0; j < n - 1; j++) {
                 System.out.print("* ");
             }
 
-            System.out.print("*"); 
-            System.out.println(); 
+            System.out.println("*"); 
         }
 	}
 }
