@@ -14,11 +14,11 @@ public class DamkaBoard {
 			{
 				if(k%2 == 1)
 				{
-					System.Out.print(" *");
+					System.out.print(" *");
 				}
 				else
 				{
-					System.Out.print("* ");
+					System.out.print("* ");
 				}
 			}
 		 }
