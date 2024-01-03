@@ -4,14 +4,14 @@
 public class DamkaBoard {
 	public static void main(String[] args) {
 	int n = Integer.parseInt(args[0]);
-	        for (int i = 0; i < n; i++) {
-	            for (int j = 0; j < n; j++) {
-	                if (i % 2 != 0 && j == 0) { // Print space only for even rows, before first asterisk
-	                    System.out.print(" ");
-	                }
-	                System.out.print("* "); // Print asterisk and space
-	            }
-	            System.out.println(); // Move to the next row (outside the inner loop)
-	        }
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (i % 2 != 0 && j == 0) { // Print space only before first asterisk in even rows
+                    System.out.print(" ");
+                }
+                System.out.print("* "); // Print asterisk and space
+            }
+            System.out.println(); // Move to the next row
+        }
 	}
 }
